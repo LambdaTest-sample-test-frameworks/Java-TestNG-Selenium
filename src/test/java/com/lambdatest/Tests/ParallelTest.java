@@ -52,8 +52,8 @@ public class ParallelTest {
 
 	@AfterMethod(alwaysRun = true)
 	public void tearDown(ITestResult result) throws Exception {
-		((JavascriptExecutor) webDriver.get()).executeScript("lambda-status="
-		+ (result.isSuccess() ? "passed" : "failed"));
+		//((JavascriptExecutor) webDriver.get()).executeScript("lambda-status="
+		//+ (result.isSuccess() ? "passed" : "failed"));
 		webDriver.get().quit();
 	}
 	

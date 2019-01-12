@@ -61,7 +61,7 @@ public class ParallelJenkinsTest {
 
 	@AfterTest
 	public void afterTest() {
-		((JavascriptExecutor) getWebDriver()).executeScript("lambda-status="+status+"");
+		//((JavascriptExecutor) getWebDriver()).executeScript("lambda-status="+status+"");
 		getWebDriver().quit();
 	}
 	

@@ -73,7 +73,7 @@ public class SingleTest {
 
 	@AfterTest
 	public void afterTest() {
-		((JavascriptExecutor) driver).executeScript("lambda-status="+status+"");
+		//((JavascriptExecutor) driver).executeScript("lambda-status="+status+"");
 		driver.quit();
 	}
 
