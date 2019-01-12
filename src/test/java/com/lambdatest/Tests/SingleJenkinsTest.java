@@ -30,14 +30,6 @@ public class SingleJenkinsTest {
 	@BeforeTest
 	public void setUp() throws Exception {
 
-		/*String browser = Configuration.readConfig("browser");
-		String version = Configuration.readConfig("version");
-		String os = Configuration.readConfig("os");
-		String res = Configuration.readConfig("resolution");
-
-		String username = Configuration.readConfig("LambdaTest_UserName");
-		String accesskey = Configuration.readConfig("LambdaTest_AppKey");*/
-
 		DesiredCapabilities capability = new DesiredCapabilities();
 		capability.setCapability(CapabilityType.BROWSER_NAME, browser);
 		capability.setCapability(CapabilityType.VERSION, version);
@@ -50,8 +42,6 @@ public class SingleJenkinsTest {
 		capability.setCapability("console", true);
 		capability.setCapability("visual", true);
 
-		Reporter.log("gridURL" + gridURL);
-		//String gridURL = "https://" + username + ":" + accesskey + "@beta-hub.lambdatest.com/wd/hub";
 		driver = new RemoteWebDriver(new URL(gridURL), capability);
 
 	}

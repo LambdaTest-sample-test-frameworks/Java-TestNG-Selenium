@@ -17,18 +17,13 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class ParallelJenkinsTest {
 
-	//public WebDriver driver;
 	public static String status = "failed";
 	public String buildTag = System.getenv("LT_BUILD");
-	//public String username = System.getenv("LT_USERNAME");
-	//public String accesskey = System.getenv("LT_APIKEY");
 	public String gridURL = System.getenv("LT_GRID_URL");
 
 	@Test(dataProvider = "browsersDetails")
@@ -114,9 +109,6 @@ public class ParallelJenkinsTest {
 		}
 
 		List<Object[]> capabilitiesData = new ArrayList<Object[]>();
-
-		// Object[][] data = new Object[arrMulti.length][1];
-
 		for (int i = 0; i < arrMulti.length; i++) {
 			for (int j = 0; j < 1; j++) {
 
@@ -149,12 +141,7 @@ public class ParallelJenkinsTest {
 		capabilities.setCapability("console", true);
 		capabilities.setCapability("visual", true);
 		
-		//String username = Configuration.readConfig("LambdaTest_UserName");
-		//String accesskey = Configuration.readConfig("LambdaTest_AppKey");
-
-		
 		// Launch remote browser and set it as the current thread
-		//String gridURL = "https://" + username + ":" + accesskey + "@beta-hub.lambdatest.com/wd/hub";
 		webDriver.set(new RemoteWebDriver(new URL(gridURL), capabilities));
 
 	}
