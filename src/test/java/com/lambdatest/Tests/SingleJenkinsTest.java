@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -49,6 +50,7 @@ public class SingleJenkinsTest {
 		capability.setCapability("console", true);
 		capability.setCapability("visual", true);
 
+		Reporter.log("gridURL" + gridURL);
 		//String gridURL = "https://" + username + ":" + accesskey + "@beta-hub.lambdatest.com/wd/hub";
 		driver = new RemoteWebDriver(new URL(gridURL), capability);
 
