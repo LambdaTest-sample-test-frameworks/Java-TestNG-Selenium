@@ -59,7 +59,7 @@ public class TestBase {
 			accesskey = "3Z6PQHL1sUEW2nuvvPZxg7zom6y8ZqAvfPJBX5Ne2rWN3uwfGi";
 
 		if (gridURL == null)
-			gridURL = "https://" + username + ":" + accesskey + "@stage-hub.lambdatest.com/wd/hub";
+			gridURL = "https://" + username + ":" + accesskey + "@beta-hub.lambdatest.com/wd/hub";
 
 		// Launch remote browser and set it as the current thread
 		webDriver.set(new RemoteWebDriver(new URL(gridURL), capabilities));
