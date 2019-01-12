@@ -59,11 +59,10 @@ public class ParallelJenkinsTest {
 
 	}
 
-	@AfterMethod(alwaysRun = true)
-	public void tearDown(ITestResult result) throws Exception {
-		((JavascriptExecutor) webDriver.get()).executeScript("lambda-status="
-		+ (result.isSuccess() ? "passed" : "failed"));
-		webDriver.get().quit();
+	@AfterTest
+	public void afterTest() {
+		((JavascriptExecutor) getWebDriver()).executeScript("lambda-status="+status+"");
+		getWebDriver().quit();
 	}
 	
 	
